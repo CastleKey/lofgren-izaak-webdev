@@ -1,3 +1,5 @@
+# lofgren-izaak-webdev
+This repository is for Web Dev Summer 2
 # web-dev-template
 
 1. git clone https://github.com/jannunzi/web-dev-template.git
