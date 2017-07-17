@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
 </head>
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
+            <p class="navbar-text pull-left">
+                <a href="widget-list.html" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </p>
             <a class="navbar-brand" href="#">
-                Profile
+                Widget Edit
             </a>
             <p class="navbar-text pull-right">
-                <a href="profile.html" class="navbar-link">
+                <a href="widget-list.html" class="navbar-link">
           <span class="glyphicon glyphicon-ok">
           </span>
                 </a>
@@ -26,38 +31,41 @@
 
 
 <div class="container">
-    <h1>Profile</h1>
 
     <form>
         <div class="form-group">
-            <label for="username">Username</label>
+            <label for="username">Name</label>
             <input type="text" class="form-control" id="username" placeholder="Username">
         </div>
         <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="alice@wonderland.com">
+            <label for="email">Text</label>
+            <input type="text" class="form-control" id="email" placeholder="Text">
         </div>
         <div class="form-group">
-            <label for="first-name">First Name</label>
-            <input type="text" class="form-control" id="first-name" placeholder="Alice">
+            <label for="first-name">URL</label>
+            <input type="url" class="form-control" id="first-name" placeholder="www.example.com">
         </div>
         <div class="form-group">
-            <label for="last-name">Last Name</label>
-            <input type="text" class="form-control" id="last-name" placeholder="Wonderland">
+            <label for="last-name">Width</label>
+            <input type="text" class="form-control" id="last-name" placeholder="Width">
+        </div>
+        <div class="form-group">
+            <label for="upload">Upload</label>
+            <input type="file" class="form-control" id="upload" placeholder="Upload">
         </div>
     </form>
 
     <a class="btn btn-primary btn-block"
-       href="Website%20Pages/website-list.html">Websites</a>
+       href="widget-image.html">Upload Image</a>
     <a class="btn btn-danger  btn-block"
-       href="login.html">Logout</a>
+       href="widget-list.html">Delete</a>
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
         <div class="navbar-footer">
             <div class="navbar-text pull-right">
-                <a href="#">
+                <a href="../profile.html">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
