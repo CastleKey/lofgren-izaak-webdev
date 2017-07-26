@@ -1,70 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="WebAppMaker">
 <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <!-- User controllers and services -->
+    <script src="views/user/controllers/login.controller.client.js"></script>
+    <script src="views/user/controllers/profile.controller.client.js"></script>
+    <script src="views/user/controllers/register.controller.client.js"></script>
+    <script src="services/user.service.client.js"></script>
+
+    <!-- Website controllers and services -->
+    <script src="views/website/controllers/website-edit.controller.client.js"></script>
+    <script src="views/website/controllers/website-list.controller.client.js"></script>
+    <script src="views/website/controllers/website-new.controller.client.js"></script>
+    <script src="services/website.service.client.js"></script>
+
+    <!-- Page controllers and services -->
+    <script src="views/page/controllers/page-edit.controller.client.js"></script>
+    <script src="views/page/controllers/page-list.controller.client.js"></script>
+    <script src="views/page/controllers/page-new.controller.client.js"></script>
+    <script src="services/page.service.client.js"></script>
+
+    <!-- Widget controllers and services -->
+    <script src="views/widget/controllers/widget-edit.controller.client.js"></script>
+    <script src="views/widget/controllers/widget-list.controller.client.js"></script>
+    <script src="views/widget/controllers/widget-new.controller.client.js"></script>
+    <script src="services/widget.service.client.js"></script>
+
     <meta charset="UTF-8">
     <title>Assignment Home Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
+
 </head>
 <body>
-<h1>Assignment Home Page</h1>
-
-<h2>User Pages</h2>
-<ul>
-    <li>
-        <a href="login.html">Login</a>
-    </li>
-    <li>
-        <a href="profile.html">Profile</a>
-    </li>
-    <li>
-        <a href="register.html">Register</a>
-    </li>
-</ul>
-
-<h2>Website Pages</h2>
-<ul>
-    <li>
-        <a href="Website%20Pages/website-list.html">Website-list</a>
-    </li>
-    <li>
-        <a href="Website%20Pages/website-new.html">Website-new</a>
-    </li>
-    <li>
-        <a href="Website%20Pages/website-edit.html">Website-edit</a>
-    </li>
-</ul>
-
-<h2>Page Pages</h2>
-<ul>
-    <li>
-        <a href="Page%20Pages/page-list.html">Page-list</a>
-    </li>
-    <li>
-        <a href="Page%20Pages/page-new.html">Page-new</a>
-    </li>
-    <li>
-        <a href="Page%20Pages/page-edit.html">Page-edit</a>
-    </li>
-</ul>
-
-<h2>Widgets</h2>
-<ul>
-    <li>
-        <a href="Widgets/widget-list.html">Widget-list</a>
-    </li>
-    <li>
-        <a href="Widgets/widget-youtube.html">Widget-youtube</a>
-    </li>
-    <li>
-        <a href="Widgets/widget-chooser.html">Widget-chooser</a>
-    </li>
-    <li>
-        <a href="Widgets/widget-heading.html">Widget-heading</a>
-    </li>
-    <li>
-        <a href="Widgets/widget-image.html">Widget-image</a>
-    </li>
-</ul>
+<div ng-view></div>
 </body>
 </html>

@@ -1,7 +1,116 @@
-input.form-control {
+/*input.form-control {*/
+/*margin-bottom: 5px;*/
+/*}*/
+
+/*body {*/
+/*padding-top: 65px;*/
+/*}*/
+
+
+
+.wd-scrollable-left-split {
+    position: absolute;
+    bottom: 37px;
+    top: 50px;
+    overflow: scroll;
+    padding-top: 10px;
+}
+@media (min-width: 768px) {
+    /*.col-sm-8 {*/
+    /*width: 66.66666667%;*/
+    /*margin-left: 33%;*/
+    /*}*/
+}
+
+
+input.form-control,
+textarea.form-control,
+select.form-control {
     margin-bottom: 5px;
 }
 
 body {
-    padding-top: 100px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.navbar-default {
+    background-color: cornflowerblue;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.navbar-collapse.collapse {
+    display: block!important;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+/*.navbar-link {*/
+/*color: white;*/
+/*}*/
+
+.glyphicon {
+    color: white;
+}
+
+.glyphicon-cog {
+    color: royalblue;
+}
+
+.glyphicon-align-justify {
+    color: royalblue;
+}
+
+/*
+.list-group-item {
+    border: none;
+}
+*/
+
+div.row {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+div.container-fluid {
+}
+
+div.webEdit {
+    overflow: hidden;
+}
+
+.srollable-left {
+    position: absolute;
+    top: 50px;
+    bottom: 0px;
+    overflow: scroll;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+
+
+@media (min-width: 768px) {
+    /*.col-sm-8 {*/
+    /*margin-left: 33%;*/
+    /*}*/
+}
+
+.wd-widget {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.wd-toolbar {
+    position: absolute;
+    background-color: white;
+    top: 0px;
+    right: 0px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 10px;
+    opacity: 0.8;
 }
