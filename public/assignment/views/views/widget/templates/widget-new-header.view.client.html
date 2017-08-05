@@ -1,0 +1,50 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <p class="navbar-text pull-left">
+            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="navbar-link">
+          <span class="glyphicon glyphicon-chevron-left">
+          </span>
+            </a>
+        </p>
+        <a class="navbar-brand" href="#">
+            Widget New Heading
+        </a>
+        <p class="navbar-text pull-right">
+            <a ng-click="model.createHeadingWidget(model.widget.text, model.widget.size)"
+               href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="navbar-link">
+          <span class="glyphicon glyphicon-ok">
+          </span>
+            </a>
+        </p>
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <form>
+
+        <div class="form-group">
+            <label for="text">Heading</label>
+            <input ng-model="model.widget.text" id="text" class="form-control" type="text"/>
+        </div>
+        <div class="form-group">
+            <label for="size">Size</label>
+            <input ng-model="model.widget.size" id="size" class="form-control" type="text"/>
+        </div>
+
+    </form>
+
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="navbar-footer">
+            <div class="navbar-text pull-right">
+                <a href="#/user/{{model.userId}}">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
