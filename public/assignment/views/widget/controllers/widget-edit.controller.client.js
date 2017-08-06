@@ -24,11 +24,27 @@
                 WidgetService.deleteWidget(model.widgetId);
             }
 
-            function init() {
-                model.widget = WidgetService.findWidgetById(model.widgetId);
-                model.widgets = WidgetService.findWidgetsByPageId(model.pageId);
+            WidgetService
+                .findWidgetsByPageId(model.pageId)
+                .then(renderWidgets);
+
+            function renderWidgets (widgets) {
+                model.widgets = widgets;
             }
-            init();
+
+            WidgetService
+                .findWidgetById(model.widgetId)
+                .then(renderWidget);
+
+            function renderWidget (widget) {
+                model.widget = widget;
+            }
+
+            // function init() {
+            //     model.widget = WidgetService.findWidgetById(model.widgetId);
+            //     model.widgets = WidgetService.findWidgetsByPageId(model.pageId);
+            // }
+            // init();
         }
 
 })();

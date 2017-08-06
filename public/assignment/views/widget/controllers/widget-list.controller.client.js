@@ -13,12 +13,20 @@
         model.websiteId = $routeParams["wid"];
         model.pageId = $routeParams["pid"];
 
-        function init() {
-            model.widgets = WidgetService.findWidgetsByPageId(model.pageId);
-            //model.user = UserService.findUserById(model.userId);
+        WidgetService
+            .findWidgetsByPageId(model.pageId)
+            .then(renderWidgets);
+
+        function renderWidgets (widgets) {
+            model.widgets = widgets;
         }
 
-        init();
+        // function init() {
+        //     model.widgets = WidgetService.findWidgetsByPageId(model.pageId);
+        //     //model.user = UserService.findUserById(model.userId);
+        // }
+        //
+        // init();
 
         model.trustThisContent = trustThisContent;
         model.getYouTubeEmbedUrl = getYouTubeEmbedUrl;

@@ -9,31 +9,33 @@
 
     function RegisterController($location, UserService) {
 
-        var vm = this;
+        var model = this;
 
         // event handlers
-        vm.register = register;
+        model.register = register;
 
         // implementation
         function register(username, password, password2) {
 
-            if(password !== password2) {
-                vm.error = "Passwords must match";
+            if (password !== password2) {
+                model.error = "Passwords must match";
                 return;
             }
 
             var found = UserService.findUserByUsername(username);
 
-            if(found !== null) {
-                vm.error = "Username is not available";
+            if (found == username) {
+                model.error = "Username is not available";
             } else {
                 var user = {
                     username: username,
                     password: password
                 };
-                // vm.message = user;
-                UserService.createUser(user);
-                $location.url('/user/' + user._id);
+                UserService
+                    .createUser(user)
+                    .then(function (user) {
+                        $location.url('/user/' + user._id);
+                    });
             }
         }
     }

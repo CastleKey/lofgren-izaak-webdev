@@ -14,6 +14,22 @@
             model.updateWebsite = updateWebsite;
             model.deleteWebsite = deleteWebsite;
 
+            WebsiteService
+                .findWebsitesByUser(model.userId)
+                .then(renderWebsites);
+
+            function renderWebsites (websites) {
+                model.websites = websites;
+            }
+
+            WebsiteService
+                .findWebsiteById(model.websiteId)
+                .then(renderWebsite);
+
+            function renderWebsite (website) {
+                model.website = website;
+            }
+
             function updateWebsite(website) {
                 WebsiteService.updateWebsite(model.websiteId, website);
             }
@@ -22,13 +38,13 @@
                 WebsiteService.deleteWebsite(model.websiteId);
             }
 
-            function init() {
-                var found = WebsiteService.findWebsitesByUser(model.userId);
-                model.websites = found;
-                model.website = WebsiteService.findWebsiteById(model.websiteId);
-                console.log(model.website.name);
-            }
-            init();
+            // function init() {
+            //     var found = WebsiteService.findWebsitesByUser(model.userId);
+            //     model.websites = found;
+            //     model.website = WebsiteService.findWebsiteById(model.websiteId);
+            //     console.log(model.website.name);
+            // }
+            // init();
         }
 
 })();

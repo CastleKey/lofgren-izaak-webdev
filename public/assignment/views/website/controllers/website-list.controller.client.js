@@ -8,16 +8,17 @@
         .module("WebAppMaker")
         .controller("WebsiteListController", WebsiteListController)
 
-        function WebsiteListController($routeParams, WebsiteService, UserService) {
+        function WebsiteListController($routeParams, WebsiteService) {
             var model = this;
             model.userId = $routeParams["uid"];
 
-            function init() {
-                var found = WebsiteService.findWebsitesByUser(model.userId);
-                model.websites = found;
-                model.user = UserService.findUserById(model.userId);
-            }
-            init();
-        }
+            WebsiteService
+                .findWebsitesByUser(model.userId)
+                .then(renderWebsites);
 
+            function renderWebsites (websites) {
+                model.websites = websites;
+            }
+
+        }
 })();

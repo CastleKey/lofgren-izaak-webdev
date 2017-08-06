@@ -15,6 +15,22 @@
             model.updatePage = updatePage;
             model.deletePage = deletePage;
 
+            PageService
+                .findPagesByWebsiteId(model.websiteId)
+                .then(renderPages);
+
+            function renderPages (pages) {
+                model.pages = pages;
+            }
+
+            PageService
+                .findPageById(model.pageId)
+                .then(renderPage);
+
+            function renderPage (page) {
+                model.page = page;
+            }
+
             function updatePage(page) {
                 PageService.updatePage(model.pageId, page);
             }
@@ -23,12 +39,12 @@
                 PageService.deletePage(model.pageId);
             }
 
-            function init() {
-                var found = PageService.findPagesByWebsiteId(model.websiteId);
-                model.pages = found;
-                model.page = PageService.findPageById(model.pageId);
-            }
-            init();
+            // function init() {
+            //     var found = PageService.findPagesByWebsiteId(model.websiteId);
+            //     model.pages = found;
+            //     model.page = PageService.findPageById(model.pageId);
+            // }
+            // init();
         }
 
 })();

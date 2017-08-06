@@ -5,16 +5,26 @@
 (function() {
     angular
         .module("WebAppMaker")
-        .controller("LoginController", LoginController)
+        .controller("LoginController", LoginController);
 
         function LoginController($location, UserService) {
             var model = this;
 
             model.login = function (username, password) {
 
-                var found = UserService.findUserByCredentials(username, password);
+                //var found = UserService.findUserByCredentials(username, password);
 
-                function loginTwo(found) {
+                console.log("Hello World");
+                UserService
+                    .findUserByCredentials(username, password)
+                    .then(login, handleSomeError);
+
+                function handleSomeError(error) {
+                    model.message = "Username and password pair not found, please try again";
+                }
+
+
+                function login(found) {
                     if(found !== null) {
                         $location.url('/user/' + found._id);
                         // $scope.message = "Welcome " + username;
@@ -22,8 +32,6 @@
                         model.message = "Username and password pair not found, please try again";
                     }
                 }
-
-                loginTwo(found);
             };
         }
 

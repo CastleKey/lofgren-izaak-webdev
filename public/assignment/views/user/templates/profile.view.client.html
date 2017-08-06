@@ -12,6 +12,10 @@
     </div>
 </nav>
 
+<div ng-show="model.message" class="alert alert-success">
+    {{model.message}}
+</div>
+
 
 <div class="container">
     <h1>Profile</h1>
@@ -22,23 +26,31 @@
             <input readonly ng-model="model.user.username" id="username" class="form-control" type="text"/>
         </div>
         <div class="form-group">
-            <label for="email">Email address</label>
-            <input readonly ng-model="model.user.email" id="email" class="form-control" type="email"/>
+            <label for="password">Password</label>
+            <input ng-model="password" id="password" class="form-control" type="text"/>
+        </div>
+        <div class="form-group">
+            <label for="password2">Verify Password</label>
+            <input ng-model="password2" id="password2" class="form-control" type="text"/>
         </div>
         <div class="form-group">
             <label for="first-name">First Name</label>
-            <input readonly ng-model="model.user.firstName" id="first-name" class="form-control" type="text"/>
+            <input ng-model="model.user.firstName" id="first-name" class="form-control" type="text"/>
         </div>
         <div class="form-group">
             <label for="last-name">Last Name</label>
-            <input readonly ng-model="model.user.lastName" id="last-name" class="form-control"
-                   type="text" value="model.user.lastName"/>
+            <input ng-model="model.user.lastName" id="last-name" class="form-control" type="text"/>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input ng-model="model.user.email" id="email" class="form-control" type="email"/>
         </div>
     </form>
 
+    <a class="btn btn-success btn-block" ng-click="model.updateUser(model.user)">Update</a>
+    <a class="btn btn-danger btn-block" ng-click="model.deleteUser(model.user)">Unregister</a>
     <a class="btn btn-primary btn-block" href="#/user/{{model.user._id}}/website">Websites</a>
-    <a class="btn btn-danger  btn-block"
-       href="#/login">Logout</a>
+    <a class="btn btn-warning  btn-block" href="#/login">Logout</a>
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">

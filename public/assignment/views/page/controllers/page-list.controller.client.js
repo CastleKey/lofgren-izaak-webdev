@@ -13,13 +13,19 @@
             model.userId = $routeParams["uid"];
             model.websiteId = $routeParams["wid"];
 
-            function init() {
-                model.pages = PageService.findPagesByWebsiteId(model.websiteId);
-                model.website = WebsiteService.findWebsiteById(model.websiteId);
-                model.user = UserService.findUserById(model.userId);
-                //model.user = UserService.findUserById(model.userId);
+            PageService
+                .findPagesByWebsiteId(model.websiteId)
+                .then(renderPages);
+
+            function renderPages (pages) {
+                model.pages = pages;
             }
-            init();
+
+            // function init() {
+            //     model.pages = PageService.findPagesByWebsiteId(model.websiteId);
+            //     model.website = WebsiteService.findWebsiteById(model.websiteId);
+            // }
+            // init();
 
         }
 })();
