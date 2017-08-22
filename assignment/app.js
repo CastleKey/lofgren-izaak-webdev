@@ -1,4 +1,12 @@
 var app = require('../express');
+//var q = require('q');
+
+var mongoose = require('mongoose');
+mongoose.Promise = require('q').Promise;
+
+
+//mongoose.Promise = require('q').Promise;
+mongoose.connect('mongodb://localhost/webdev_summer2_2017');
 
 require('./services/user.service.server');
 require('./services/website.service.server');
